@@ -3,16 +3,16 @@ using namespace std;
 class Room{
     public:
     int length,breadth,height;
-    Room(){
+    Room(){//default constructor
         cout<<"From constructor method"<<endl;
     }
-    Room(int l, int b,int h){
+    Room(int l, int b,int h){//constructor overload
         cout<<"From constructor 1"<<endl;
         length=l;
         breadth=b;
         height=h;
     }
-    Room(Room &r1){
+    Room(Room &r1){//Copy constructor
         length=r1.length;
         breadth=r1.breadth;
     }
@@ -22,7 +22,7 @@ class Room{
     int volume(){
         return length*breadth*height;
     }
-    ~Room(){
+    ~Room(){//Destructor
         cout<<"Destructor called"<<endl;
     }
 };
