@@ -41,5 +41,7 @@ int main()
     Room room4(room2);//r4 is new object with copied values of r2
     cout<<room4.length<<endl;
     cout<<room4.area()<<endl;
+    room4.height=100;
+    cout<<room4.volume()<<endl;
     return 0;
 }
