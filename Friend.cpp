@@ -2,6 +2,7 @@
 #include<vector>
 using namespace std;
 class Distance{
+    private:
     int length;
     public:
     Distance(){
