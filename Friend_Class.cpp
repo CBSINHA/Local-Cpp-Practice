@@ -33,6 +33,6 @@ int main()
 {
     ClassA ca;
     ClassB cb;
-    cout<<Add(ca,cb);
+    cout<<Add(ca,cb)<<endl;
  return 0;
 }
