@@ -9,7 +9,7 @@ class ClassA{
     ClassA(){
         this->numA=10;
     }
-    friend class ClassB;
+    friend class ClassB;//We did not need forward declaration for ClassB here cuz a friend class declaration auto acts as a forward declaration
 };
 class ClassB{
     private:
