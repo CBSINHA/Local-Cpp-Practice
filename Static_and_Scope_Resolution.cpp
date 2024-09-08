@@ -3,7 +3,6 @@
 using namespace std;
 class Bank{
     private:
-    int x=10;
     public:
     int accNumber;
     int balance=1000;
@@ -27,7 +26,6 @@ int main()
 {
     Bank b1;
     cout<<Bank::getnumberofaccounts()<<endl;
-    // cout<<b1.x; Can't access
     b1.Deposit(200);
     cout<<b1.balance;
  return 0;
