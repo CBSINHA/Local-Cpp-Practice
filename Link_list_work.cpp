@@ -12,8 +12,6 @@ class Node{
     };
 };
 void InsertatTail(Node* &head,int val){
-    cout<<"Enter the value to append to the Linked List: "<<endl;
-    cin>>val;
     Node* n=new Node(val);
     if(head==NULL){
         head=n;
@@ -26,20 +24,29 @@ void InsertatTail(Node* &head,int val){
     temp->next=n;
 }
 void Delete(Node* &head,int val){
-    cout<<"Enter the value you want to delete from the Linked List: "<<endl;
-    cin>>val;
     if(head==NULL){
         cout<<"The Linked List is empty and hence no value can be deleted."<<endl;
         return;
     }
     Node* temp=head;
     Node* prev=NULL;
+    if(temp->data==val){
+        head=temp->next;
+        delete temp;
+    }
+    else{
     while(temp->data!=val){
+        if(temp->next==NULL){
+            cout<<"Value not found."<<endl;
+            return;
+        }
         prev=temp;
         temp=temp->next;
     }
+    
     prev->next=temp->next;
     delete(temp);
+    }
 }
 void Display(Node* head){
     cout<<"The final Linked List: ";
@@ -48,11 +55,32 @@ void Display(Node* head){
         cout<< temp->data<<" ";
         temp=temp->next;
     }
-    cout<<"That's the whole LL.";
+    cout<<endl<<"That's the whole LL."<<endl;
 }
 int main()
 {
+    int val,val1,code;
     Node* head=NULL;
-    Display(head);
+    cout<<"Enter 1 to add to add element at tail\nEnter 2 to Delete element anywhere in the LL\n3 to display the LL.\n69 terminates the program"<<endl;
+    cin>>code;
+    while(code!=69){
+        switch (code){
+            case 1:
+            cout<<"Enter the element: ";
+            cin>>val;
+            InsertatTail(head,val);
+            break;
+            case 2:
+            cout<<"Enter element for deletion: ";
+            cin>>val1;
+            Delete(head,val1);
+            break;
+            case 3:
+            Display(head);
+            break;
+        }
+        cout<<"Enter your choice again"<<endl;
+        cin>>code;
+    }
  return 0;
 }
