@@ -109,7 +109,19 @@ class Character{
     int getMagicPower(){
         return magicPower;
     }
+    void attack(){//incomplete
+        setAttackPower(attackPower);
+        cout<<getAttackPower()<<endl;
 
+    }
+    void defense(){//incomplete
+        setDefensePower(defensePower);
+        cout<<getDefensePower();
+
+    }
+    void useMagic(){
+        
+    }
 };
 int main()
 {
